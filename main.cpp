@@ -15,8 +15,6 @@ bool doesOneLine(FILE* file = NULL){
   int column = 0;
   Operand  a(column, file);
   Operator o(column, file);
-  cout << "column = " << column << endl;
-  debug(18);
   Operand  b(column, file);
   quit = a.perform(b, o) == QUIT;
   a.outputResult();

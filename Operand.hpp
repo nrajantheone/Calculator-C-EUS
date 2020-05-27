@@ -21,8 +21,10 @@ class Operand {
   public:
   Operand(int& column, FILE* file = stdin) : data(NULL), length(0), dvalue(0.0), value(0), type(QUIT), resultType(QUIT){
     allocateMemory();
-    //if(!handleUnaryCase(column, file))
-      handleBinaryCase(column, file);
+    char c = '\0';
+    column = skipSpaces(c, file);
+    if(!handleUnaryCase(c, column, file))
+      handleBinaryCase(c, column, file);
   }
     Operand() : data(NULL), length(0), dvalue(0.0), value(0), type(QUIT), resultType(QUIT) {
         allocateMemory();
