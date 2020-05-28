@@ -38,9 +38,7 @@ class Operand {
     ~Operand() {
         freeMemory();
     }
-    bool handleUnaryCase(int& column, FILE* file = stdin){
-      char c = '\0';
-      column = skipSpaces(c, file);
+    bool handleUnaryCase(char c, int& column, FILE* file = stdin){
       if(c == '~'){
         ungetc(c, file);
         type = INTEGER;        

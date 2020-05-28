@@ -17,7 +17,7 @@ bool doesOneLine(FILE* file = NULL){
   Operator o(column, file);
   Operand  b(column, file);
   quit = a.perform(b, o) == QUIT;
-  a.outputResult();
+  a.outputResult(o.getOP() == COMPLEMENT);
   return quit;
 }
 
